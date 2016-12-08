@@ -9,23 +9,15 @@ import android.content.Intent;
 
 public class HomePage extends AppCompatActivity {
 
-    private UserProfileObj userProfileObj = new UserProfileObj();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
     }
 
-    public void callListActivity(View view)
-    {
-        Intent intent = new Intent(HomePage.this, ListActivity.class);
-        startActivity(intent);
-    }
-
     public void callMusicPlaying(View view)
     {
-        Intent intent = new Intent(HomePage.this, MusicPlaying.class);
+        Intent intent = new Intent(HomePage.this, ContextMiddlewareService.class);
         //intent.putExtra("Name of LocalPlayList set by user", userProfileObj.getLocalPlayListName());
         //intent.putExtra("Name of YoutubePlaylist set by user", userProfileObj.getYoutubePlaylistName());
         //intent.putExtra("Minimum Walking Speed set by user", userProfileObj.getMinWalkingSpeed());

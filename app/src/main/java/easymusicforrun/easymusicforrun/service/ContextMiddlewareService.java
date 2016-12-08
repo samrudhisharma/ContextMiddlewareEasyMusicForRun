@@ -1,15 +1,12 @@
-package easymusicforrun.easymusicforrun;
+package easymusicforrun.easymusicforrun.service;
 
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
 import android.media.AudioManager;
-import android.os.Bundle;
 import android.os.IBinder;
-import android.os.RemoteException;
-import android.util.Log;
+
+import easymusicforrun.easymusicforrun.IContextInterface;
 
 public class ContextMiddlewareService extends Service {
 
@@ -22,12 +19,29 @@ public class ContextMiddlewareService extends Service {
     }
 
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+
+        return START_STICKY;
+    }
+
+    @Override
     public IBinder onBind(Intent intent) {
         return mBinder;
     }
 
     @Override
-    public void onDestroy() {
+    public void onRebind(Intent intent) {
+        super.onRebind(intent);
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return true;
+    }
+
+    @Override
+        public void onDestroy() {
+            super.onDestroy();
     }
 
     /*

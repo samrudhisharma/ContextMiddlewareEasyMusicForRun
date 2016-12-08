@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="easymusicforrun.easymusicforrun">
+    package="easymusicforrun.easymusicforrun.service">
 
     <application
         android:allowBackup="true"
@@ -33,10 +33,10 @@
 
 
         <service
-            android:name="easymusicforrun.easymusicforrun.ContextMiddlewareService"
-            android:process=":remoteLocation" >
+            android:name=".ContextMiddlewareService" >
+            <!--android:process=":remoteLocation" >-->
             <intent-filter>
-                <action android:name="easymusicforrun.easymusicforrun.ContextMiddlewareService.RUN" />
+                <action android:name="easymusicforrun.easymusicforrun.service.ContextMiddlewareService.RUN" />
             </intent-filter>
         </service>
 

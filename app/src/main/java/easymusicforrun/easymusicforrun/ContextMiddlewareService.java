@@ -43,6 +43,7 @@ public class ContextMiddlewareService extends Service {
          * Avoid using functions that work synchronously if there is a possibility of delay in getting the required response.
          */
         public boolean isJackPluggedIn() {
+            System.out.println("Checking");
             AudioManager audioManager = (AudioManager) ContextMiddlewareService.super.getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
             return audioManager.isWiredHeadsetOn();
         }
